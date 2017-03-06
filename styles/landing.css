@@ -55,3 +55,9 @@ body.landing {
     color: rgb(233,50,117);
     font-size: 5rem;
 }
+.ion-music-note:hover, .ion-radio-waves:hover, .ion-iphone:hover {
+    color: white;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+}
