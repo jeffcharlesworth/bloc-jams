@@ -26,6 +26,23 @@ var albumMarconi = {
          { title: 'Wrong phone number', duration: '2:15'}
      ]
  };
+var albumBarnYardNoises = {
+    title: 'Cacophony of dinner',
+    artist: 'McDonald and the maids',
+    label: 'Genetic Abomination Industries',
+    year: '1956',
+    albumArtUrl: 'assets/images/album_covers/01.png',
+    songs: [
+        {title: 'Come milk with me', duration: '1:05:01' },
+        {title: 'It was a verry good harvest', duration: '3:20:01' },
+        {title: 'My hay', duration: '3:20:01' },
+        {title: 'The mare is a tramp', duration: '3:20:01' },
+        {title: 'I\'ve got you under my pelt', duration: '3:20:01' },
+    ]
+}
+
+var albumArray = [albumPicasso, albumMarconi, albumBarnYardNoises];
+
 var createSongRow = function (songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
@@ -59,3 +76,12 @@ var setCurrentAlbum = function (album) {
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
 };
+var imgClick = document.getElementsByClassName('album-cover-art')[0];
+var count = 0;
+imgClick.addEventListener('click', function(event) {
+                        count++;
+                        if(count == 3){
+                            count = 0;
+                        }
+                        setCurrentAlbum(albumArray[count]);
+                        });
