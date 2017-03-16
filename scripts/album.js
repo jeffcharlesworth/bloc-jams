@@ -4,7 +4,7 @@ var createSongRow = function (songNumber, songName, songLength) {
         '<tr class="album-view-song-item">'
     +     '<td class="song-item-number" data-song-number="' + songNumber  + '">' + songNumber + '</td>'
     +     '<td class="song-item-title">' + songName + '</td>'
-    +     '<td class="song-item-duration">' + songLength + '</td>'
+    +     '<td class="song-item-duration">' + filterTimeCode(songLength) + '</td>'
     +   '</tr>'
     ;
     
@@ -227,7 +227,7 @@ var previousSong = function() {
     }
 
     // Set a new current song
-    set(currentSongIndex + 1);
+    setSong(currentSongIndex + 1);
     currentSoundFile.play();
     updateSeekBarWhileSongPlays();
 
